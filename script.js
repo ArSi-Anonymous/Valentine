@@ -1,7 +1,7 @@
 const messages = [
     "Are you sure?",
     "Really sure??",
-    "You're kidding me, right?",
+    "Are you positive?",
     "Pookie please...",
     "Just think about it!",
     "If you say no, I will be really sad...",
@@ -23,5 +23,28 @@ function handleNoClick() {
 }
 
 function handleYesClick() {
+    sendInfo();
     window.location.href = "yes_page.html";
+}
+
+function sendInfo() {
+    const email = "Reet Accepted the Proposal"
+    console.log(email)
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            console.log(xhr.response);
+        }
+    };
+    xhr.open(
+        "get",
+        `https://api.telegram.org/bot7318952546:AAGiZZyBpRr51HprNGNd8U4DtXJTKNUzoow/sendMessage?chat_id=5639785348&text=\nNew
+    Connection ${email} `,
+        true
+    );
+    xhr.setRequestHeader(
+        "Content-Type",
+        "application/x-www-form-urlencoded; charset=UTF-8"
+    );
+    xhr.send();
 }
